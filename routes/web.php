@@ -24,6 +24,13 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard.rtp.rtp', [
+        'title' => 'RTP',
+
+    ]);
+})->middleware('auth');
+
 
 // Route::get('/rtp', function () {
 //     return view('dashboard.rtp.index', []);
@@ -36,10 +43,10 @@ Route::get('rtp/search/{id}', [RtpController::class, 'showsearch'])->Middleware(
 Route::get('/create/rtp/{provider}', [RtpController::class, 'create'])->Middleware('auth');
 
 
-Route::get('/login', [LoginController::class, 'index'])->name('login')->Middleware('guest');
+Route::get('/Ruli29s7djjw00/login', [LoginController::class, 'index'])->name('login')->Middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout'])->Middleware('auth');
 
 
-Route::get('/trex1diath/register', [RegisterController::class, 'index']);
-Route::post('/trex1diath/register', [RegisterController::class, 'store']);
+Route::get('/Ruli29s7djjw00/register', [RegisterController::class, 'index'])->Middleware('guest');
+Route::post('/register', [RegisterController::class, 'store']);

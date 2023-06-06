@@ -1,7 +1,7 @@
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
     id="sidenav-main">
     <div class="sidenav-header">
-        <a class="navbar-brand m-0 text-center" href="/">
+        <a class="navbar-brand m-0 text-center" href="/dashboard">
             <img src="https://sinardewi.com/asset/img/l21-logo-1.png" class="navbar-brand-img h-200 w-40" alt="main_logo">
             <span class="ms-1 font-weight-bold text-center"> L21 Panel</span>
         </a>
@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link  {{ Request::is('/') ? 'active' : '' }}" href="/">
+                <a class="nav-link  {{ Request::is('/dashboard') ? 'active' : '' }}" href="/dashboard">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1"
