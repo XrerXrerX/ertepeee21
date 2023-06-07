@@ -15,20 +15,20 @@
                 <table class="table" id="tablegp">
                     <tbody id="tbgame" class="icgame">
                         <tr>
-                            <td class="active"><a href=""><img src="/storage/imgrtp/provider/pragmatic.png"></a></td>
-                            <td><a href="../Provider/Habanero/"><img src="/storage/imgrtp/provider/habanero.png"></a></td>
-                            <td><a href="../Provider/MicroGaming/"><img src="/storage/imgrtp/provider/microgaming.png"></a>
+                            <td class="active"><a href="/"><img src="/storage/imgrtp/provider/pragmatic.png"></a></td>
+                            <td><a href="/habanero"><img src="/storage/imgrtp/provider/habanero.png"></a></td>
+                            <td><a href="/microgaming"><img src="/storage/imgrtp/provider/microgaming.png"></a>
                             </td>
                         </tr>
                         <tr>
-                            <td><a href="../Provider/PGsoft/"><img src="/storage/imgrtp/provider/pgsoft.png"></a>
+                            <td><a href="/pgsoft"><img src="/storage/imgrtp/provider/pgsoft.png"></a>
                             </td>
-                            <td><a href="../Provider/TopTrend/"><img src="/storage/imgrtp/provider/toptrend.png"></a></td>
-                            <td><a href="../Provider/IDN/"><img src="/storage/imgrtp/provider/idnslot.png"><a
-                                        href=""></a></td>
+                            <td><a href="/toptrend"><img src="/storage/imgrtp/provider/toptrend.png"></a></td>
+                            <td><a href="/idn"><img src="/storage/imgrtp/provider/idnslot.png"><a href=""></a>
+                            </td>
                         </tr>
                         <tr>
-                            <td colspan="3"><a href="../Provider/Gmw/"><img src="/storage/imgrtp/provider/gmw.png"></a>
+                            <td colspan="3"><a href="/gmw"><img src="/storage/imgrtp/provider/gmw.png"></a>
                             </td>
                         </tr>
                     </tbody>

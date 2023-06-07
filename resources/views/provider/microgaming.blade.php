@@ -15,9 +15,10 @@
                 <table class="table" id="tablegp">
                     <tbody id="tbgame" class="icgame">
                         <tr>
-                            <td class="active"><a href="/"><img src="/storage/imgrtp/provider/pragmatic.png"></a></td>
+                            <td><a href="/"><img src="/storage/imgrtp/provider/pragmatic.png"></a></td>
                             <td><a href="/habanero"><img src="/storage/imgrtp/provider/habanero.png"></a></td>
-                            <td><a href="/microgaming"><img src="/storage/imgrtp/provider/microgaming.png"></a>
+                            <td class="active"><a href="/microgaming"><img
+                                        src="/storage/imgrtp/provider/microgaming.png"></a>
                             </td>
                         </tr>
                         <tr>
@@ -40,7 +41,7 @@
             <!-- membuat ukuran dalam kartu berapa persen dalam 1 baris -->
             @php $i = 0; @endphp
 
-            @foreach ($gmw as $row)
+            @foreach ($mic as $row)
                 <!-- border putrih card conten -->
                 <div class="gameplay hover10">
                     <script>
@@ -60,7 +61,7 @@
                             $imageSrc = "/storage/{$row['gambar']}";
                         } else {
                             // Jika created_at dan updated_at kurang dari atau sama dengan tahun 2020
-                            $imageSrc = "/storage/imgrtp/SG/{$row['gambar']}";
+                            $imageSrc = "/storage/imgrtp/MIC/{$row['gambar']}";
                         }
                     @endphp
 

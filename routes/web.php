@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RtpProviderController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Models\RtpProvider;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +45,7 @@ Route::get('rtp/search/{id}', [RtpController::class, 'showsearch'])->Middleware(
 Route::get('/create/rtp/{provider}', [RtpController::class, 'create'])->Middleware('auth');
 
 
-Route::get('/Ruli29s7djjw00/login', [LoginController::class, 'index'])->name('login')->Middleware('guest');
+Route::get('/Ruli29s7djjw00/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
@@ -53,4 +55,65 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 
 
-Route::resource('/', RtpProviderController::class);
+Route::get('/', function () {
+    return view('provider.pragmatic', [
+        'provider' => 'PRAGMATIC PLAY',
+        'id' => 'pp',
+        'pp' => RtpProvider::where('divisi', 'pp')
+            ->orderBy('updated_at', 'desc')->get()
+    ]);
+});
+
+Route::get('/habanero', function () {
+    return view('provider.habanero', [
+        'provider' => 'PRAGMATIC PLAY',
+        'id' => 'pp',
+        'hb' => RtpProvider::where('divisi', 'hb')
+            ->orderBy('updated_at', 'desc')->get()
+    ]);
+});
+
+Route::get('/microgaming', function () {
+    return view('provider.microgaming', [
+        'provider' => 'PRAGMATIC PLAY',
+        'id' => 'pp',
+        'mic' => RtpProvider::where('divisi', 'mic')
+            ->orderBy('updated_at', 'desc')->get()
+    ]);
+});
+
+Route::get('/pgsoft', function () {
+    return view('provider.pgsoft', [
+        'provider' => 'PRAGMATIC PLAY',
+        'id' => 'pp',
+        'pg' => RtpProvider::where('divisi', 'rtp')
+            ->orderBy('updated_at', 'desc')->get()
+    ]);
+});
+
+Route::get('/toptrend', function () {
+    return view('provider.toptrend', [
+        'provider' => 'PRAGMATIC PLAY',
+        'id' => 'pp',
+        'ttr' => RtpProvider::where('divisi', 'ttr')
+            ->orderBy('updated_at', 'desc')->get()
+    ]);
+});
+
+Route::get('/idn', function () {
+    return view('provider.idn', [
+        'provider' => 'PRAGMATIC PLAY',
+        'id' => 'pp',
+        'idn' => RtpProvider::where('divisi', 'idn')
+            ->orderBy('updated_at', 'desc')->get()
+    ]);
+});
+
+Route::get('/gmw', function () {
+    return view('provider.gmw', [
+        'provider' => 'PRAGMATIC PLAY',
+        'id' => 'pp',
+        'gmw' => RtpProvider::where('divisi', 'sg')
+            ->orderBy('updated_at', 'desc')->get()
+    ]);
+});
