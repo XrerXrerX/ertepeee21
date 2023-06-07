@@ -17,12 +17,12 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard.rtp.rtp', [
-        'title' => 'RTP',
+// Route::get('/', function () {
+//     return view('dashboard.rtp.rtp', [
+//         'title' => 'RTP',
 
-    ]);
-});
+//     ]);
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard.rtp.rtp', [
@@ -45,8 +45,12 @@ Route::get('/create/rtp/{provider}', [RtpController::class, 'create'])->Middlewa
 
 Route::get('/Ruli29s7djjw00/login', [LoginController::class, 'index'])->name('login')->Middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout'])->Middleware('auth');
+Route::post('/logout', [LoginController::class, 'logout']);
 
 
 Route::get('/Ruli29s7djjw00/register', [RegisterController::class, 'index'])->Middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
+
+
+
+Route::resource('/', RtpProviderController::class);

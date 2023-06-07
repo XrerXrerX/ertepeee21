@@ -138,9 +138,6 @@ class RtpController extends Controller
         ]);
 
 
-
-
-
         if ($request->divisi == 'pp') {
             if ($request->file('gambar')) {
 
