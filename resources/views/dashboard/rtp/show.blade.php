@@ -48,13 +48,16 @@
                     <tr>
                         <th
                             class="text-white text-uppercase text-center text-secondary text-large font-weight-bolder opacity-7">
-                            No</th>
+                            NO</th>
                         <th
                             class="text-white text-uppercase text-secondary text-center text-large font-weight-bolder opacity-7 ps-2">
-                            Nama Games</th>
+                            NAMA GAMES</th>
                         <th
                             class="text-white text-center text-uppercase text-secondary text-large font-weight-bolder opacity-7">
-                            Action</th>
+                            HOT GAMES</th>
+                        <th
+                            class="text-white text-center text-uppercase text-secondary text-large font-weight-bolder opacity-7">
+                            ACTION</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,9 +65,21 @@
                         <tr>
                             <td class="text-white text-center">{{ $loop->iteration }}</td>
                             <td class="text-white">{{ $post->nama }}</td>
+                            <td class="d-flex justify-content-center">
+                                @if ($post->priority > 0)
+                                    <div class="form-check form-switch py-2">
+                                        <input class="form-check-input" type="checkbox" id="priority" name="priority"
+                                            checked="" disabled>
+                                    </div>
+                                @else
+                                    <div class="form-check form-switch py-2">
+                                        <input class="form-check-input" type="checkbox" id="priority" name="priority"
+                                            disabled>
+                                    </div>
+                                @endif
+                            </td>
                             <td class="text-white text-center">
                                 {{-- <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-info"><span data-feather="eye" class="align-text-bottom"></span></a> --}}
-
 
                                 <a href="/rtp/{{ $post->id }}/edit"><button class="badge btn-info bg-dark">
                                         <i class="fas fa-pencil-alt">
@@ -82,6 +97,9 @@
                                         </i> <span class="badge">Delete</span></button>
                                 </form>
                             </td>
+
+
+
                         </tr>
                     @endforeach
 

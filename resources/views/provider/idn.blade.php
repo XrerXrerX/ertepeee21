@@ -64,9 +64,15 @@
                             $imageSrc = "/storage/imgrtp/idn/{$row['gambar']}";
                         }
                     @endphp
-
-                    <img class="lazyload" data-src="{{ $imageSrc }}" alt="{{ $row['nama'] }}" data-toggle="modal"
-                        data-target="#{{ $i }}">
+                    <div style="position: relative;">
+                        <img class="lazyload" data-src="{{ $imageSrc }}" alt="{{ $row['nama'] }}" data-toggle="modal"
+                            data-target="#{{ $i }}">
+                        @if ($i < 12)
+                            <span style="position: absolute; top: 0; left: 0;">
+                                <img src="/storage/imgrtp/provider/1.gif" alt="">
+                            </span>
+                        @endif
+                    </div>
 
                     <p
                         style="color: #e9e9e9;

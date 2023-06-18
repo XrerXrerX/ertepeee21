@@ -51,7 +51,6 @@
                     @php
                         $createdAt = $row['created_at'];
                         $updatedAt = $row['updated_at'];
-                        
                         if (strtotime($createdAt) > strtotime('2020-01-01') && strtotime($updatedAt) > strtotime('2020-01-01')) {
                             // Jika created_at dan updated_at lebih dari tahun 2020
                             $imageSrc = "/storage/{$row['gambar']}";
@@ -63,9 +62,16 @@
                             $imageSrc = "/storage/imgrtp/PP/{$row['gambar']}";
                         }
                     @endphp
+                    <div style="position: relative;">
+                        <img class="lazyload" data-src="{{ $imageSrc }}" alt="{{ $row['nama'] }}" data-toggle="modal"
+                            data-target="#{{ $i }}">
+                        @if ($i < 12)
+                            <span style="position: absolute; top: 0; left: 0;">
+                                <img src="/storage/imgrtp/provider/1.gif" alt="">
+                            </span>
+                        @endif
+                    </div>
 
-                    <img class="lazyload" data-src="{{ $imageSrc }}" alt="{{ $row['nama'] }}" data-toggle="modal"
-                        data-target="#{{ $i }}">
 
                     <p
                         style="color: #e9e9e9;

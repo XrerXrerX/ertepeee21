@@ -129,14 +129,18 @@ class RtpController extends Controller
      */
     public function store(Request $request)
     {
-
+        if ($request->priority == 'on') {
+            $request->merge(['priority' => '1']);
+        } else {
+            $request->merge(['priority' => '']);
+        }
 
         $validatedData = $request->validate([
+            'priority' => 'max:255|in:1',
             'divisi' => 'required|max:255',
             'nama' => 'required|unique:rtp_providers',
             'gambar' => 'image|file|max:5046',
         ]);
-
 
         if ($request->divisi == 'pp') {
             if ($request->file('gambar')) {
@@ -191,59 +195,55 @@ class RtpController extends Controller
      */
     public function show(string $id)
     {
-
-
-
         if ($id == 'pp') {
             return view('dashboard.rtp.show', [
                 'provider' => 'PRAGMATIC PLAY',
                 'id' => 'pp',
                 'posts' => RtpProvider::where('divisi', 'pp')
-                    ->orderBy('nama', 'asc')->paginate(20)->withQueryString()
+                    ->orderBy('priority', 'desc')->orderBy('updated_at', 'desc')->paginate(20)->withQueryString()
             ]);
         } else if ($id == 'hb') {
             return view('dashboard.rtp.show', [
                 'provider' => 'HABANERO',
                 'id' => 'hb',
                 'posts' => RtpProvider::where('divisi', 'hb')
-                    ->orderBy('nama', 'asc')->paginate(20)->withQueryString()
+                    ->orderBy('priority', 'desc')->orderBy('updated_at', 'desc')->paginate(20)->withQueryString()
             ]);
         } else if ($id == 'idn') {
             return view('dashboard.rtp.show', [
                 'provider' => 'IDN PLAY',
                 'id' => 'idn',
                 'posts' => RtpProvider::where('divisi', 'idn')
-                    ->orderBy('nama', 'asc')->paginate(20)->withQueryString()
+                    ->orderBy('priority', 'desc')->orderBy('updated_at', 'desc')->paginate(20)->withQueryString()
             ]);
         } else if ($id == 'rtp') {
             return view('dashboard.rtp.show', [
                 'provider' => 'PG SOFT',
                 'id' => 'rtp',
                 'posts' => RtpProvider::where('divisi', 'rtp')
-                    ->orderBy('nama', 'asc')->paginate(20)->withQueryString()
+                    ->orderBy('priority', 'desc')->orderBy('updated_at', 'desc')->paginate(20)->withQueryString()
             ]);
         } else if ($id == 'ttr') {
             return view('dashboard.rtp.show', [
                 'provider' => 'TOP TREND',
                 'id' => 'ttr',
                 'posts' => RtpProvider::where('divisi', 'ttr')
-                    ->orderBy('nama', 'asc')->paginate(20)->withQueryString()
+                    ->orderBy('priority', 'desc')->orderBy('updated_at', 'desc')->paginate(20)->withQueryString()
             ]);
         } else if ($id == 'mic') {
             return view('dashboard.rtp.show', [
                 'provider' => 'MICRO GAMING',
                 'id' => 'mic',
                 'posts' => RtpProvider::where('divisi', 'mic')
-                    ->orderBy('nama', 'asc')->paginate(20)->withQueryString()
+                    ->orderBy('priority', 'desc')->orderBy('updated_at', 'desc')->paginate(20)->withQueryString()
             ]);
         } else {
             return view('dashboard.rtp.show', [
                 'provider' => 'GMW',
                 'id' => 'sg',
                 'posts' => RtpProvider::where('divisi', 'sg')
-                    ->orderBy('nama', 'asc')->paginate(20)->withQueryString()
+                    ->orderBy('priority', 'desc')->orderBy('updated_at', 'desc')->paginate(20)->withQueryString()
             ]);
-            dd($id);
         }
     }
 
@@ -335,17 +335,26 @@ class RtpController extends Controller
      */
     public function update(Request $request, string $id)
     {
+
+
+
         $date = RtpProvider::where('id', $id)->first()->created_at;
         $divisi = strtoupper(RtpProvider::where('id', $id)->first()->divisi);
         if ($divisi == 'IDN') {
             $divisi = strtolower($divisi);
         }
         $oldgmbr = substr($request->oldrtpimage, 0, 6);
+        if ($request->priority == 'on') {
+            $request->merge(['priority' => '1']);
+        } else {
+            $request->merge(['priority' => '']);
+        }
 
 
 
         if ($request->gambar) {
             $validatedData = $request->validate([
+                'priority' => 'max:255|in:1',
                 'divisi' => 'required|max:255',
                 'nama' => 'required',
                 'gambar' => 'image|file|max:5046',
@@ -361,6 +370,7 @@ class RtpController extends Controller
             }
         } else {
             $validatedData = $request->validate([
+                'priority' => 'max:255|in:1',
                 'divisi' => 'required|max:255',
                 'nama' => 'required',
             ]);

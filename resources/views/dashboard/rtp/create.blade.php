@@ -61,6 +61,11 @@
                                         <span class="text-danger">{{ $errors->first('gambar') }}</span>
                                     @endif
                                 </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="priority" name="priority">
+                                    <label class="form-check-label font-weight-bolder text-white" for="priority">HOT
+                                        GAMES</label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -101,6 +106,17 @@
                 reader.readAsDataURL(image);
             } else {
                 alert("Image size more than 100KB");
+            }
+        });
+
+        const checkbox = document.getElementById('priority');
+        const label = document.querySelector('.form-check-label');
+
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                label.classList.add('green'); // Menambahkan kelas CSS 'green'
+            } else {
+                label.classList.remove('green'); // Menghapus kelas CSS 'green'
             }
         });
     </script>

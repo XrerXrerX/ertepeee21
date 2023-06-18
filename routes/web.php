@@ -60,7 +60,7 @@ Route::get('/', function () {
         'provider' => 'PRAGMATIC PLAY',
         'id' => 'pp',
         'pp' => RtpProvider::where('divisi', 'pp')
-            ->orderBy('updated_at', 'desc')->get()
+            ->orderBy('priority', 'desc')->orderBy('updated_at', 'desc')->get()
     ]);
 });
 
@@ -69,7 +69,7 @@ Route::get('/habanero', function () {
         'provider' => 'PRAGMATIC PLAY',
         'id' => 'pp',
         'hb' => RtpProvider::where('divisi', 'hb')
-            ->orderBy('updated_at', 'desc')->get()
+            ->orderBy('priority', 'desc')->orderBy('updated_at', 'desc')->get()
     ]);
 });
 
@@ -78,7 +78,7 @@ Route::get('/microgaming', function () {
         'provider' => 'PRAGMATIC PLAY',
         'id' => 'pp',
         'mic' => RtpProvider::where('divisi', 'mic')
-            ->orderBy('updated_at', 'desc')->get()
+            ->orderBy('priority', 'desc')->orderBy('updated_at', 'desc')->get()
     ]);
 });
 
@@ -87,7 +87,7 @@ Route::get('/pgsoft', function () {
         'provider' => 'PRAGMATIC PLAY',
         'id' => 'pp',
         'pg' => RtpProvider::where('divisi', 'rtp')
-            ->orderBy('updated_at', 'desc')->get()
+            ->orderBy('priority', 'desc')->orderBy('updated_at', 'desc')->get()
     ]);
 });
 
@@ -96,7 +96,7 @@ Route::get('/toptrend', function () {
         'provider' => 'PRAGMATIC PLAY',
         'id' => 'pp',
         'ttr' => RtpProvider::where('divisi', 'ttr')
-            ->orderBy('updated_at', 'desc')->get()
+            ->orderBy('priority', 'desc')->orderBy('updated_at', 'desc')->get()
     ]);
 });
 
@@ -105,7 +105,7 @@ Route::get('/idn', function () {
         'provider' => 'PRAGMATIC PLAY',
         'id' => 'pp',
         'idn' => RtpProvider::where('divisi', 'idn')
-            ->orderBy('updated_at', 'desc')->get()
+            ->orderBy('priority', 'desc')->orderBy('updated_at', 'desc')->get()
     ]);
 });
 
@@ -114,6 +114,6 @@ Route::get('/gmw', function () {
         'provider' => 'PRAGMATIC PLAY',
         'id' => 'pp',
         'gmw' => RtpProvider::where('divisi', 'sg')
-            ->orderBy('updated_at', 'desc')->get()
+            ->orderBy('priority', 'desc')->orderBy('updated_at', 'desc')->get()
     ]);
 });

@@ -82,6 +82,13 @@
   }
 }
 
+.form-switch .form-check-input:checked {
+  border-color: rgb(56 116 35 / 95%) !important;
+  background-color: rgb(10 212 18 / 95%)!important;
+}
+
+
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
