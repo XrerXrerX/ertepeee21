@@ -13,6 +13,8 @@
         </div>
     @endif
     <div class="container-fluid py-4">
+        <div class="bg-rd"></div>
+
         <div class="row">
             <div class="col-xl-4 col-sm-6 mb-4">
                 <a href="/rtp/posts/{{ $totaldivisi[3]->divisi }}">

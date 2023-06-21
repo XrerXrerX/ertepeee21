@@ -67,7 +67,7 @@
   --bs-link-hover-color: #830866;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fcf8e3;
-  --bs-card-bgcard: #181b23;
+  --bs-card-bgcard: rgb(28 36 48 / 30%);
 }
 
 *,
@@ -84,7 +84,7 @@
 
 .form-switch .form-check-input:checked {
   border-color: rgb(56 116 35 / 95%) !important;
-  background-color: rgb(10 212 18 / 95%)!important;
+  background-color: rgb(10 212 18 / 95%) !important;
 }
 
 
@@ -10675,9 +10675,8 @@ fieldset:disabled .btn {
   background-color: #0a1830 !important;
 }
 
-.bg-dark-login
-{
-  background-color: #1b1c1f  !important;
+.bg-dark-login {
+  background-color: #1b1c1f !important;
 }
 
 .bg-white {
@@ -26706,17 +26705,71 @@ pre[class*="language-"] {
 }
 
 
-    .drp-calendar.left {
-    color: black;
+.drp-calendar.left {
+  color: black;
 }
 
-    .drp-calendar.right {
-    color: black;
+.drp-calendar.right {
+  color: black;
 }
 
-.calendertable{
-    color: black;
+.calendertable {
+  color: black;
 
 }
+
+.bg-su {
+  background: linear-gradient(310deg, #232228 0%, #1f1143 50%, #111516 75%, #000000 100%);
+}
+
+.bg-rd {
+  position: absolute;
+  top: 250px;
+  right: 40%;
+  left: 60%;
+  width: 20%;
+  height: 20%;
+  border-radius: 52% 65% 56% 53% / 47% 51% 46% 43%;
+  background: linear-gradient(310deg, #bf00ff 0%, #ff80bf 100%);
+  filter: blur(90px);
+  z-index: -1;
+}
+
+.bg-rd-yl {
+  position: absolute;
+  top: 450px;
+  right: 50%;
+  left: 50%;
+  width: 20%;
+  height: 20%;
+  border-radius: 52% 65% 56% 53% / 47% 51% 46% 43%;
+  background: linear-gradient(310deg, #ff0000 0%, #a11c7a 100%);
+  filter: blur(90px);
+  z-index: -2;
+}
+
+
+.bg-side-rd {
+  position: absolute;
+  top: 350px;
+  right: 0px;
+  width: 30%;
+  height: 30%;
+  border-radius: 84% 0% 29% 100% / 45% 36% 0% 58%;
+  background: linear-gradient(310deg, #e710fe 0%, #5c0865 50%, #8d1414 75%, #4c0527 100%);
+  filter: blur(110px);
+  z-index: -2;
+}
+
+
+.bg-tmbh-btn {
+  background: linear-gradient(310deg, #232228 0%, #1f1143 50%, #111516 75%, #000000 100%);
+}
+
+
+.logout {
+  background-image: linear-gradient(310deg, #ba3cc3 0%, #000000 100%);
+}
+
 
 /*# sourceMappingURL=dashboard-free.css.map */
