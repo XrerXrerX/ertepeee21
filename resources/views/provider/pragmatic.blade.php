@@ -6,7 +6,7 @@
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
 
-        <script src="./asset_rtp/load.js"></script>
+        <script src="/asset_rtp/load.js"></script>
     </div>
     <!-- <table class="table table-dark table-hover"> -->
     <div class="container">
@@ -15,7 +15,8 @@
                 <table class="table" id="tablegp">
                     <tbody id="tbgame" class="icgame">
                         <tr>
-                            <td class="active"><a href="/"><img src="/storage/imgrtp/provider/pragmatic.png"></a></td>
+                            <td class="active"><a href="/"><img
+                                        src="{{ asset('storage/imgrtp/provider/pragmatic.png') }}"></a></td>
                             <td><a href="/habanero"><img src="/storage/imgrtp/provider/habanero.png"></a></td>
                             <td><a href="/microgaming"><img src="/storage/imgrtp/provider/microgaming.png"></a>
                             </td>
@@ -51,6 +52,7 @@
                     @php
                         $createdAt = $row['created_at'];
                         $updatedAt = $row['updated_at'];
+                        
                         if (strtotime($createdAt) > strtotime('2020-01-01') && strtotime($updatedAt) > strtotime('2020-01-01')) {
                             // Jika created_at dan updated_at lebih dari tahun 2020
                             $imageSrc = "/storage/{$row['gambar']}";
@@ -62,6 +64,7 @@
                             $imageSrc = "/storage/imgrtp/PP/{$row['gambar']}";
                         }
                     @endphp
+
                     <div style="position: relative;">
                         <img class="lazyload" data-src="{{ $imageSrc }}" alt="{{ $row['nama'] }}" data-toggle="modal"
                             data-target="#{{ $i }}">
@@ -71,7 +74,6 @@
                             </span>
                         @endif
                     </div>
-
 
                     <p
                         style="color: #e9e9e9;

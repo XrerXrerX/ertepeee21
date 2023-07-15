@@ -19,12 +19,7 @@ use App\Models\RtpProvider;
 |
 */
 
-// Route::get('/', function () {
-//     return view('dashboard.rtp.rtp', [
-//         'title' => 'RTP',
 
-//     ]);
-// });
 
 Route::get('/dashboard', function () {
     return view('dashboard.rtp.rtp', [
@@ -34,15 +29,12 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 
 
-// Route::get('/rtp', function () {
-//     return view('dashboard.rtp.index', []);
-// });
 
 
-Route::resource('/rtp', RtpController::class)->Middleware('auth');
-Route::get('rtp/posts/{totaldivisi:divisi}', [RtpController::class, 'show'])->Middleware('auth');
-Route::get('rtp/search/{id}', [RtpController::class, 'showsearch'])->Middleware('auth');
-Route::get('/create/rtp/{provider}', [RtpController::class, 'create'])->Middleware('auth');
+Route::resource('/rtp', RtpController::class)->middleware('auth');
+Route::get('rtp/posts/{totaldivisi:divisi}', [RtpController::class, 'show'])->middleware('auth');
+Route::get('rtp/search/{id}', [RtpController::class, 'showsearch'])->middleware('auth');
+Route::get('/create/rtp/{provider}', [RtpController::class, 'create'])->middleware('auth');
 
 
 Route::get('/Ruli29s7djjw00/login', [LoginController::class, 'index'])->name('login');
@@ -50,7 +42,7 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 
-Route::get('/Ruli29s7djjw00/register', [RegisterController::class, 'index']);
+Route::get('/Ruli29s7djjw00/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
 
@@ -59,8 +51,7 @@ Route::get('/', function () {
     return view('provider.pragmatic', [
         'provider' => 'PRAGMATIC PLAY',
         'id' => 'pp',
-        'pp' => RtpProvider::where('divisi', 'pp')
-            ->orderBy('priority', 'desc')->orderBy('updated_at', 'desc')->get()
+        'pp' => RtpProvider::where('divisi', 'pp')->orderBy('priority', 'desc')->orderBy('updated_at', 'desc')->get()
     ]);
 });
 

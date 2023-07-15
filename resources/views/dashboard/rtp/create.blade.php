@@ -16,14 +16,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            {{-- <label for="divisi"
-                                class="form-control-label text-white @error('divisi') is-invalid @enderror">Nama
-                                Provider</label> --}}
                             <input class="form-control" type="hidden" id="divisi" name="divisi"
                                 value="{{ $provider_slt }}">
-                            {{-- @if ($errors->has('divisi'))
-                                <span class="text-danger">{{ $errors->first('divisi') }}</span>
-                            @endif --}}
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -45,7 +39,14 @@
                                 Slot</label>
                             <div class="card">
                                 <div class="img-area bg-dark text-center p-5" data-img="">
-                                    <i class="ni ni-cloud-upload-96 text-dark" style="font-size: 8em; color: #000;"></i>
+                                    <div class="row">
+                                        <i class="ni ni-cloud-upload-96 text-dark" style="font-size: 8em; color: #000;">
+                                        </i>
+                                    </div>
+                                    <div class="row">
+                                        <i class="text-dark" style="font-size: 2.5em; color: #000;"> ukuran harus : 140 x
+                                            93</i>
+                                    </div>
 
                                 </div>
                                 <div class="form-group mb-4">
@@ -66,6 +67,16 @@
                                     <label class="form-check-label font-weight-bolder text-white" for="priority">HOT
                                         GAMES</label>
                                 </div>
+                                <div class="alert alert-warning alert-dismissible fade show" role="alert" id="tmb">
+                                    <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+                                    <span class="text-black font-weight-bolder"><strong>Warning!</strong> kuran harus sesuai
+                                        aturan karena mempengaruhi tampilan SLOT !</span>
+                                    <button type="button" class="btn-close font-" data-bs-dismiss="alert"
+                                        aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -96,6 +107,8 @@
                     allImg.forEach(item => item.remove());
                     const alli = imgArea.querySelectorAll('i');
                     alli.forEach(item => item.remove());
+                    // const divElement = document.getElementById('tmb');
+                    // divElement.remove();
                     const gambar = reader.result;
                     const img = document.createElement('img');
                     img.src = gambar;
@@ -108,7 +121,6 @@
                 alert("Image size more than 100KB");
             }
         });
-
         const checkbox = document.getElementById('priority');
         const label = document.querySelector('.form-check-label');
 

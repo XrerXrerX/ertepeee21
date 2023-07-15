@@ -50,7 +50,7 @@
                             <div class="row px-xl-5 px-sm-4 px-3 ">
                             </div>
                             <div class="card-body bg-dark-login">
-                                <form action="/trex1diath/register" method="post" role="form text-left">
+                                <form action="/register" method="post" role="form text-left">
                                     @csrf
                                     <div class="mb-3">
                                         <label for="name" class="text-white">Name</label>

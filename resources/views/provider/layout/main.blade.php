@@ -39,7 +39,7 @@
     <script src="./asset_rtp/script.js"></script>
 
 
-    {{-- <script type='text/javascript'>
+    <script type='text/javascript'>
         document.addEventListener("devtoolschange", function(event) {
             if (event.detail.open) {
                 // Jendela developer terbuka
@@ -92,7 +92,7 @@
                 return false;
             }
         }
-    </script> --}}
+    </script>
 
 </body>
 

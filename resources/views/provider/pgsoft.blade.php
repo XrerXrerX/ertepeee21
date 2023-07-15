@@ -63,7 +63,6 @@
                             $imageSrc = "/storage/imgrtp/PG/{$row['gambar']}";
                         }
                     @endphp
-
                     <div style="position: relative;">
                         <img class="lazyload" data-src="{{ $imageSrc }}" alt="{{ $row['nama'] }}" data-toggle="modal"
                             data-target="#{{ $i }}">

@@ -16,7 +16,7 @@ class RtpController extends Controller
     {
         $this->middleware(function ($request, $next) {
             if ($request->session()->has('login_expired') && $request->session()->get('login_expired')) {
-                return redirect('/trex1diath/login')->withErrors(['login_expired' => 'Session habis. Silakan login kembali.']);
+                return redirect('/Ruli29s7djjw00/login')->withErrors(['login_expired' => 'Session habis. Silakan login kembali.']);
             }
             return $next($request);
         });
@@ -129,6 +129,7 @@ class RtpController extends Controller
      */
     public function store(Request $request)
     {
+
         if ($request->priority == 'on') {
             $request->merge(['priority' => '1']);
         } else {
@@ -142,13 +143,12 @@ class RtpController extends Controller
             'gambar' => 'image|file|max:5046',
         ]);
 
+
         if ($request->divisi == 'pp') {
             if ($request->file('gambar')) {
-
                 $validatedData['gambar'] = $request->file('gambar')->store('imgrtp/PP', 'public');
             }
         }
-
 
         if ($request->divisi == 'hb') {
             if ($request->file('gambar')) {
@@ -182,6 +182,8 @@ class RtpController extends Controller
         }
 
 
+
+
         // $validatedData['user_id'] = auth()->user()->id;
         // $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200, '...');
 
@@ -195,6 +197,9 @@ class RtpController extends Controller
      */
     public function show(string $id)
     {
+
+
+
         if ($id == 'pp') {
             return view('dashboard.rtp.show', [
                 'provider' => 'PRAGMATIC PLAY',
@@ -249,9 +254,6 @@ class RtpController extends Controller
 
     public function showsearch(string $id)
     {
-
-
-
         if ($id == 'pp') {
             return view('dashboard.rtp.show', [
                 'provider' => 'PRAGMATIC PLAY',
@@ -336,25 +338,28 @@ class RtpController extends Controller
     public function update(Request $request, string $id)
     {
 
-
-
         $date = RtpProvider::where('id', $id)->first()->created_at;
         $divisi = strtoupper(RtpProvider::where('id', $id)->first()->divisi);
         if ($divisi == 'IDN') {
             $divisi = strtolower($divisi);
         }
+
+        if ($divisi == 'RTP') {
+            $divisi = 'PG';
+        }
+
         $oldgmbr = substr($request->oldrtpimage, 0, 6);
+
         if ($request->priority == 'on') {
             $request->merge(['priority' => '1']);
         } else {
-            $request->merge(['priority' => '']);
+            $request->merge(['priority' => '0']);
         }
-
 
 
         if ($request->gambar) {
             $validatedData = $request->validate([
-                'priority' => 'max:255|in:1',
+                'priority' => 'max:255',
                 'divisi' => 'required|max:255',
                 'nama' => 'required',
                 'gambar' => 'image|file|max:5046',
@@ -370,7 +375,7 @@ class RtpController extends Controller
             }
         } else {
             $validatedData = $request->validate([
-                'priority' => 'max:255|in:1',
+                'priority' => 'max:255',
                 'divisi' => 'required|max:255',
                 'nama' => 'required',
             ]);

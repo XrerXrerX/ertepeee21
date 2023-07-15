@@ -15,7 +15,7 @@
                 <table class="table" id="tablegp">
                     <tbody id="tbgame" class="icgame">
                         <tr>
-                            <td class="active"><a href="/"><img src="/storage/imgrtp/provider/pragmatic.png"></a></td>
+                            <td><a href="/"><img src="/storage/imgrtp/provider/pragmatic.png"></a></td>
                             <td><a href="/habanero"><img src="/storage/imgrtp/provider/habanero.png"></a></td>
                             <td><a href="/microgaming"><img src="/storage/imgrtp/provider/microgaming.png"></a>
                             </td>
@@ -28,7 +28,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="3"><a href="/gmw"><img src="/storage/imgrtp/provider/gmw.png"></a>
+                            <td colspan="3" class="active"><a href="/gmw"><img
+                                        src="/storage/imgrtp/provider/gmw.png"></a>
                             </td>
                         </tr>
                     </tbody>

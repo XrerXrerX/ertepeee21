@@ -6,7 +6,6 @@
             <span class="ms-1 font-weight-bold text-center"> L21 Panel</span>
         </a>
     </div>
-    <div class="bg-side-rd"></div>
     <hr class="horizontal dark mt-0">
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
         <ul class="navbar-nav">
@@ -115,7 +114,7 @@
     <div class="sidenav-footer mx-3 ">
         <form action="/logout" method="post">
             @csrf
-            <button type="submit" class="btn logout mt-3 w-100">logout
+            <button type="submit" class="btn bg-gradient-primary mt-3 w-100">logout
             </button>
         </form>
     </div>
